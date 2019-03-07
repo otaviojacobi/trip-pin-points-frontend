@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {Route, Switch, BrowserRouter} from 'react-router-dom';
 
 import { createStore } from 'redux';
-import { Provider } from "react-redux";
+import { Provider } from 'react-redux';
 
 import TripPinPoints from './components/TripPinPoints';
 import NotFound from './components/NotFound';
