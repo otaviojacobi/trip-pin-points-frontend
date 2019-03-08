@@ -10,7 +10,10 @@ import NotFound from './components/NotFound';
 import tripPinPointsApp from './reducers';
 
 import Login from "./components/Login";
+import Register from "./components/Register";
+
 import {auth} from "./actions"
+
 
 let store = createStore(tripPinPointsApp, applyMiddleware(thunk));
 
@@ -40,6 +43,7 @@ class RootContainerComponent extends Component {
         <Switch>
           <PrivateRoute exact path='/' component={TripPinPoints} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/register" component={Register} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>
