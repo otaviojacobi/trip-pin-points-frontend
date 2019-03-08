@@ -22,16 +22,9 @@ class CustomMap extends Component {
     }
   }
 
-  /*TODO: use this to load and set user's marker in future
   componentDidMount(){
-    // or you can set markers list somewhere else
-    // please also set your correct lat & lng
-    // you may only use 1 image for all markers, if then, remove the img_src attribute ^^
-    this.setState({
-      markers: [{lat: xxxx, lng: xxxx, img_src: 'YOUR-IMG-SRC'},{lat: xxxx, lng: xxxx, img_src: 'YOUR-IMG-SRC' },{lat: xxxx, lng: xxxx,  img_src: 'YOUR-IMG-SRC'}],
-    });
+    this.props.fetchMarkers();
   }
-  */
 
  _onMapClick({x, y, lat, lng, event}) {
     this.setState({ 
@@ -78,6 +71,9 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    fetchMarkers: () => {
+      dispatch(markers.fetchMarkers())
+    },
     addMarker: params => {
       dispatch(markers.addMarker(params));
     },
