@@ -1,8 +1,9 @@
 import { combineReducers } from 'redux';
 import markers from "./markers";
+import auth from "./auth";
 
 const tripPinPointsApp = combineReducers({
-  markers,
+  markers, auth,
 })
 
 export default tripPinPointsApp;
