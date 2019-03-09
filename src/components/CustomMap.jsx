@@ -4,7 +4,7 @@ import GoogleMapReact from 'google-map-react';
 import {connect} from 'react-redux';
 
 import Marker from './Marker';
-import {markers} from '../actions';
+import {markers, auth} from '../actions';
 
 class CustomMap extends Component {
   static defaultProps = {
@@ -41,7 +41,8 @@ class CustomMap extends Component {
   render() {
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
+      <div style={{ height: '96vh', width: '100%' }}>
+
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
           defaultCenter={this.props.center}
@@ -58,6 +59,9 @@ class CustomMap extends Component {
               )
             })}
         </GoogleMapReact>
+        <div style={{textAlign: "right"}}>
+          <button type="submit" onClick={this.props.logout}>Logout</button>
+        </div>
       </div>
     );
   }
@@ -80,6 +84,7 @@ const mapDispatchToProps = dispatch => {
     deleteMarker: marker => {
       dispatch(markers.deleteMarker(marker));
     },
+    logout: () => dispatch(auth.logout()),
   }
 }
 

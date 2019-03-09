@@ -43,6 +43,12 @@ export const login = (username, password) => {
   }
 }
 
+export const logout = () => {
+  return dispatch => {
+    dispatch({type: 'LOGOUT_SUCCESSFUL'});
+  }
+}
+
 export const register = (username, password, email) => {
   return (dispatch, getState) => {
     let headers = {"Content-Type": "application/json"};

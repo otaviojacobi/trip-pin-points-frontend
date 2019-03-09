@@ -10,7 +10,7 @@ export default function markers(state = initialState, action) {
       return [...state, ...actionMarkers];
 
     case 'ADD_MARKER':
-      return [...state, { lng: action.lng, lat: action.lat }];
+      return [...state, { lng: action.marker.lng, lat: action.marker.lat }];
     case 'DELETE_MARKER':
       return markers.filter(marker => marker.lng !== action.marker.lng && marker.lat !== action.marker.lat);
     default:
