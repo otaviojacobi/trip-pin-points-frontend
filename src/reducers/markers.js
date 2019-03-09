@@ -6,8 +6,8 @@ export default function markers(state = initialState, action) {
   switch (action.type) {
 
     case 'FETCH_MARKERS':
-      console.log(action.markers);
-      return [...state, ...action.markers];
+      const actionMarkers = action.markers || []; 
+      return [...state, ...actionMarkers];
 
     case 'ADD_MARKER':
       return [...state, { lng: action.lng, lat: action.lat }];
