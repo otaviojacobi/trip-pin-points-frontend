@@ -21,11 +21,12 @@ before_deploy:
   - zip -0 /tmp/travisci-$(cat /tmp/version).zip -r build Dockerfile nginx.conf
   - chmod +x deploy.sh
 
-- provider: script
-  skip_cleanup: true
-  script: deploy.sh
-  on:
-    branch: master
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: deploy.sh
+    on:
+      branch: master
 
 env:
   matrix:
