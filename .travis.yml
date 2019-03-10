@@ -14,8 +14,6 @@ script:
   - npm test
 
 before_deploy:
-  - ls
-  - cd trip-pin-points-frontend
   - echo $(git rev-parse --short HEAD) >> /tmp/version
   - zip -0 /tmp/travisci-$(cat /tmp/version).zip -r build Dockerfile nginx.conf
   - chmod +x deploy.sh
