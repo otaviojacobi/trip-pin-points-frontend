@@ -17,6 +17,7 @@ deploy:
   app: trip-pin-points-frontend
   env: TripPinPointsFrontend-env
   bucket_name: elasticbeanstalk-sa-east-1-877463950700
+  before_deploy: "npm run build"
   skip_cleanup: true
 env:
   matrix:
