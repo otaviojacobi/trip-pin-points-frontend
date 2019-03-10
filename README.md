@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/otaviojacobi/trip-pin-points-frontend.png)](https://travis-ci.com/otaviojacobi/trip-pin-points-frontend)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
