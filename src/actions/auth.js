@@ -17,7 +17,7 @@ export const login = (username, password) => {
     let headers = {"Content-Type": "application/json"};
     let body = JSON.stringify({username, password});
 
-    return fetch("http://trip-pin-points.sa-east-1.elasticbeanstalk.com/token", {headers, body, method: "PUT"})
+    return fetch("https://trip-pin-points-auth.com/token", {headers, body, method: "PUT"})
       .then(res => {
         if (res.status < 500) {
           return res.json().then(data => {
@@ -54,7 +54,7 @@ export const register = (username, password, email) => {
     let headers = {"Content-Type": "application/json"};
     let body = JSON.stringify({username, email, password});
 
-    return fetch("http://trip-pin-points.sa-east-1.elasticbeanstalk.com/register", {headers, body, method: "PUT"})
+    return fetch("https://trip-pin-points-auth.com/register", {headers, body, method: "PUT"})
       .then(res => {
         if (res.status < 500) {
           return res.json().then(data => {

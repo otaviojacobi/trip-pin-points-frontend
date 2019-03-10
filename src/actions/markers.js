@@ -1,4 +1,4 @@
-const markerService = 'http://trip-pin-points-markers.sa-east-1.elasticbeanstalk.com/marker';
+const markerService = 'https://trip-pin-points-markers.com/marker';
 
 export const fetchMarkers = () => {
   return (dispatch, getState) => {
