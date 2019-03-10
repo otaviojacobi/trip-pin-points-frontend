@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 mkdir ~/.aws
 touch ~/.aws/config
 chmod 600 ~/.aws/config
