@@ -13,6 +13,9 @@ export default function markers(state = initialState, action) {
       return [...state, { lng: action.marker.lng, lat: action.marker.lat }];
     case 'DELETE_MARKER':
       return markers.filter(marker => marker.lng !== action.marker.lng && marker.lat !== action.marker.lat);
+    case 'LOGOUT_SUCCESSFUL':
+      return [];
+    
     default:
       return state;
   }
