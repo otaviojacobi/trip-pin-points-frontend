@@ -1,0 +1,30 @@
+.navBarButton {
+    border-radius: 10px;
+    background-color: white;
+    color: grey;
+}
+
+.navBarButton:hover {
+    background-color: grey;
+}
+
+.logoutButton {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.placesButton {
+    position: absolute;
+    top: 70px;
+    left: 10px;
+}
+
+.aboutButton {
+    position: absolute;
+    top: 130px;
+    left: 10px;
+}
+
+
+

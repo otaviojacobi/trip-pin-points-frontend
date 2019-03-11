@@ -7,12 +7,15 @@ import thunk from 'redux-thunk';
 
 import TripPinPoints from './components/TripPinPoints';
 import NotFound from './components/NotFound';
+import Places from './components/Places';
+import About from './components/About';
+
 import tripPinPointsApp from './reducers';
 
-import Login from "./components/Login";
-import Register from "./components/Register";
+import Login from './components/Login';
+import Register from './components/Register';
 
-import {auth} from "./actions"
+import {auth} from './actions'
 
 
 let store = createStore(tripPinPointsApp, applyMiddleware(thunk));
@@ -28,7 +31,7 @@ class RootContainerComponent extends Component {
       if (this.props.auth.isLoading) {
         return <em>Loading...</em>;
       } else if (!this.props.auth.isAuthenticated) {
-        return <Redirect to="/login" />;
+        return <Redirect to='/login' />;
       } else {
         return <ChildComponent {...props} />
       }
@@ -42,8 +45,10 @@ class RootContainerComponent extends Component {
       <BrowserRouter>
         <Switch>
           <PrivateRoute exact path='/' component={TripPinPoints} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={Register} />
+          <PrivateRoute exact path='/places' component={Places} />
+          <Route exact path='/login' component={Login} />
+          <Route exact path='/register' component={Register} />
+          <Route exact path='/about' component={About} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

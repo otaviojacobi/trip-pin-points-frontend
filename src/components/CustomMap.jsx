@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
+import {Link} from "react-router-dom";
+
 import {connect} from 'react-redux';
 
 import Marker from './Marker';
 import {markers, auth} from '../actions';
+
+import '../css/customMap.css';
 
 class CustomMap extends Component {
   static defaultProps = {
@@ -41,7 +45,7 @@ class CustomMap extends Component {
   render() {
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '96vh', width: '100%' }}>
+      <div style={{ height: '100vh', width: '100%' }}>
 
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_MAPS_API_KEY }}
@@ -59,9 +63,19 @@ class CustomMap extends Component {
               )
             })}
         </GoogleMapReact>
-        <div style={{textAlign: "right"}}>
-          <button type="submit" onClick={this.props.logout}>Logout</button>
+        <div className="logoutButton">
+          <button type="submit" onClick={this.props.logout} className="navBarButton">Logout</button>
         </div>
+        <Link to="/places">
+          <div className="placesButton">
+            <button className="navBarButton">Places</button>
+          </div>
+        </Link>
+        <Link to="/about">
+          <div className="aboutButton">
+            <button className="navBarButton">About</button>
+          </div>
+        </Link>
       </div>
     );
   }
