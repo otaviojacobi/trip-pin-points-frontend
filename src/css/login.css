@@ -1,0 +1,23 @@
+body {
+  background: #794;
+}
+.login-box {
+  background: #ffffff;
+  border-radius: 3%;
+  border: 1px solid #ddd; 
+  margin: 100px 0;
+  padding: 40px 20px 0 20px;
+}
+h1{
+    color: rgb(76, 105, 32);
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -o-hyphens: auto;
+    hyphens: auto;
+}
+
+input {
+  border-radius: 5%;
+}

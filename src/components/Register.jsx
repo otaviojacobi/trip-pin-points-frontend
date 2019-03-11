@@ -23,43 +23,50 @@ class Login extends Component {
       return <Redirect to="/" />
     }
     return (
-      <form onSubmit={this.onSubmit}>
-        <fieldset>
-          <legend>Register</legend>
-          {this.props.errors.length > 0 && (
+      <div>
+      <div className="large-3 large-centered columns">
+      <div className="login-box">
+      <h1>Trip Pin Points !</h1>
+      {this.props.errors.length > 0 && (
             <ul>
               {this.props.errors.map(error => (
-                <li key={error.field}>{error.message}</li>
+                <li className="red" key={error.field}>{error.message}</li>
               ))}
             </ul>
           )}
-          <p>
-            <label htmlFor="username">Username</label>
-            <input
-              type="text" id="username"
-              onChange={e => this.setState({username: e.target.value})} />
-          </p>
-          <p>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password" id="password"
-              onChange={e => this.setState({password: e.target.value})} />
-          </p>
-          <p>
-            <label htmlFor="password">Email</label>
-            <input
-              type="email" id="email"
-              onChange={e => this.setState({email: e.target.value})} />
-          </p>
-          <p>
-            <button type="submit">Register</button>
-          </p>
+      <div className="row">
+      <div className="large-12 columns">
+        <form onSubmit={this.onSubmit}>
+           <div className="row">
+             <div className="large-12 columns">
+                 <input type="text" name="username" placeholder="Username" onChange={e => this.setState({username: e.target.value})} />
+             </div>
+           </div>
 
-          <p>
-            Already have an account? <Link to="/login">Login</Link>
-          </p>
-        </fieldset>
-      </form>
+            <div className="row">
+             <div className="large-12 columns">
+                 <input type="email" name="email" placeholder="Email" onChange={e => this.setState({email: e.target.value})}/>
+             </div>
+          </div>
+
+          <div className="row">
+             <div className="large-12 columns">
+                 <input type="password" name="password" placeholder="Password" onChange={e => this.setState({password: e.target.value})}/>
+             </div>
+          </div>
+          <div className="row">
+            <div className="large-12 large-centered columns">
+              <input type="submit" className="button expand" value="Register"/>
+            </div>
+          </div>
+          Already have an account? <Link to="/login">Log in</Link>
+
+        </form>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
     )
   }
 }

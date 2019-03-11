@@ -5,6 +5,9 @@ import {Link, Redirect} from "react-router-dom";
 
 import {auth} from "../actions";
 
+import '../css/foundation.min.css';
+import '../css/login.css';
+
 class Login extends Component {
 
   onSubmit = e => {
@@ -17,37 +20,43 @@ class Login extends Component {
       return <Redirect to="/" />
     }
     return (
-      <form onSubmit={this.onSubmit}>
-        <fieldset>
-          <legend>Login</legend>
-          {this.props.errors.length > 0 && (
+      <div>
+      <div className="large-3 large-centered columns">
+      <div className="login-box">
+      <h1>Trip Pin Points !</h1>
+      {this.props.errors.length > 0 && (
             <ul>
               {this.props.errors.map(error => (
-                <li key={error.field}>{error.message}</li>
+                <li className="red" key={error.field}>{error.message}</li>
               ))}
             </ul>
           )}
-          <p>
-            <label htmlFor="username">Username</label>
-            <input
-              type="text" id="username"
-              onChange={e => this.setState({username: e.target.value})} />
-          </p>
-          <p>
-            <label htmlFor="password">Password</label>
-            <input
-              type="password" id="password"
-              onChange={e => this.setState({password: e.target.value})} />
-          </p>
-          <p>
-            <button type="submit">Login</button>
-          </p>
+      <div className="row">
+      <div className="large-12 columns">
+        <form onSubmit={this.onSubmit}>
+           <div className="row">
+             <div className="large-12 columns">
+                 <input type="text" name="username" placeholder="Username" onChange={e => this.setState({username: e.target.value})} />
+             </div>
+           </div>
+          <div className="row">
+             <div className="large-12 columns">
+                 <input type="password" name="password" placeholder="Password" onChange={e => this.setState({password: e.target.value})}/>
+             </div>
+          </div>
+          <div className="row">
+            <div className="large-12 large-centered columns">
+              <input type="submit" className="button expand" value="Log In"/>
+            </div>
+          </div>
+          Don't have an account? <Link to="/register">Register</Link>
 
-          <p>
-            Don't have an account? <Link to="/register">Register</Link>
-          </p>
-        </fieldset>
-      </form>
+        </form>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div>
     )
   }
 }
